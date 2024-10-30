@@ -1,7 +1,6 @@
 import os
 from enum import Enum
 from fastapi import FastAPI
-from utils import json_to_dict_list
 from typing import Optional
 from pydantic import BaseModel, Field, EmailStr
 from datetime import date, datetime
@@ -38,16 +37,16 @@ path_to_json = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 def home_page():
     return {'message': 'Hi, FastAPI!'}
 
-@app.get('/students')
-def get_all_students() -> Student:
-    return json_to_dict_list(path_to_json)
+# @app.get('/students')
+# def get_all_students() -> Student:
+#     return json_to_dict_list(path_to_json)
 
-@app.get('/students/{student_id}')
-def get_one_student(student_id: int) -> Student:
-    students = json_to_dict_list(path_to_json)
-    for student in students:
-        if student["student_id"] == student_id:
-            student_dict = student
-    return student_dict
+# @app.get('/students/{student_id}')
+# def get_one_student(student_id: int) -> Student:
+#     students = json_to_dict_list(path_to_json)
+#     for student in students:
+#         if student["student_id"] == student_id:
+#             student_dict = student
+#     return student_dict
 
  
