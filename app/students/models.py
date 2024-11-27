@@ -4,7 +4,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, Text, ForeignKey
 
 from app.base.models import Base
-from app.majors.models import Major
 
 
 class Student(Base):

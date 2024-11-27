@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI
 
 from app.majors.router import router as major_router
+from app.students.router import router as student_router
 
 app = FastAPI()
 
@@ -12,6 +13,5 @@ def home_page():
     return {'message': 'Hi, FastAPI!'}
 
 app.include_router(major_router)
+app.include_router(student_router)
 
-
- 

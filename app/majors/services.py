@@ -4,5 +4,3 @@ from app.db.database import async_session_maker
 
 class MajorService(BaseService):
     model = Major
-    session_maker = async_session_maker()
-    
